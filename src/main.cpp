@@ -9,7 +9,14 @@
 int main(int argc, char* argv[]){
     // std::cout << "Hello world!\n";
 
-    auto games = BallParser::ParseFile("data/inputLeScore.txt");
+    if(argc < 2){
+        std::cout << "\n\t\tPlease input filename\n\n";
+        return 0;
+    }
+
+    // std::string fileName =  argv[1];
+
+    auto games = BallParser::ParseFile(argv[1]);
 
     for(unsigned int i = 0; i < games->size(); i++){
         std::cout << "Round " << i << "\n";
