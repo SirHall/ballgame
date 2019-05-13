@@ -19,7 +19,7 @@ int main(int argc, char* argv[]){
     auto games = BallParser::ParseFile(argv[1]);
 
     for(unsigned int i = 0; i < games->size(); i++){
-        std::cout << "Round " << i << "\n";
+        std::cout << "Round: " << i + 1 << "\n";
         while(games->at(i)->CanPlayRound())
             games->at(i)->PlayRound();
         games->at(i)->PrintScores();
